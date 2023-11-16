@@ -3,7 +3,7 @@ import Login from "./Login.jsx";
 import SignUp from "./SignUp.jsx";
 import '../Styles/LoginPage.css'
 
-export default function LoginPage(props) {
+export default function LoginPage({ setIsLogged }) {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -12,14 +12,14 @@ export default function LoginPage(props) {
     const onClick = (e) => {
         e.preventDefault()
         if (email !== '' && password !== '') {
-            props.setIsLogged(true)
+            setIsLogged(true)
         }
     }
 
     return (
         <>
             {isLogin ? <Login
-                    onClick={onClick}
+                    setIsLogged={setIsLogged}
                     email={email}
                     password={password}
                     setEmail={setEmail}
@@ -27,7 +27,7 @@ export default function LoginPage(props) {
                     setIsLogin={setIsLogin}
                 /> :
                 <SignUp
-                    onClick={onClick}
+                    setIsLogged={setIsLogged}
                     email={email}
                     password={password}
                     setEmail={setEmail}

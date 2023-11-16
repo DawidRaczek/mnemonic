@@ -1,11 +1,26 @@
 import React from "react";
 import '../Styles/LoginPage.css'
+import { auth } from "../firebase.js"
+import {signInWithEmailAndPassword} from 'firebase/auth'
 
-export default function Login({email, setEmail, password, setPassword, onClick, setIsLogin}) {
+export default function Login({email, setEmail, password, setPassword, setIsLogin, setIsLogged}) {
 
     const changeForm = (e) => {
         e.preventDefault()
         setIsLogin(false)
+    }
+
+    const onClick = (e) => {
+        e.preventDefault()
+        signInWithEmailAndPassword(auth, email, password)
+            .then((data) => {
+                console.log(data);
+                setIsLogged(true);
+            })
+            .catch((error) => {
+                console.log(error);
+                setIsLogged(false);
+            })
     }
 
 
