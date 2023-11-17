@@ -1,6 +1,6 @@
 import React from "react";
 import '../Styles/LoginPage.css'
-import { auth } from "../firebase.js"
+import {auth} from "../firebase.js"
 import {signInWithEmailAndPassword} from 'firebase/auth'
 
 export default function Login({email, setEmail, password, setPassword, setIsLogin, setIsLogged}) {
@@ -25,20 +25,27 @@ export default function Login({email, setEmail, password, setPassword, setIsLogi
 
 
     return (
+        <div className='mainLoginPage'>
+            <div className='title'>
+            <h1 className='mnemonicTitle'>Mnemonic</h1>
+            <h2 className='cardsTitle'>Cards</h2>
+            </div>
             <div className="loginPage">
                 <h1 className='login'>Login</h1>
                 <form>
-                    <label>
+                    <label htmlFor='email'>
                         Email
                     </label>
-                    <input type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
-                    <label>
+                    <input id='email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <label htmlFor='password'>
                         Password
                     </label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input id='password' type="password" value={password}
+                           onChange={(e) => setPassword(e.target.value)}/>
                     <button className='loginbtn' onClick={onClick}>Login</button>
                     <button className='signbtn' onClick={changeForm}>SignUp/Login</button>
                 </form>
             </div>
+        </div>
     )
 }

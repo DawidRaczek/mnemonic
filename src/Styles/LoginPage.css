@@ -1,27 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.mainLoginPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mnemonicTitle {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: 75px;
+    margin: 0;
+}
+
+.cardsTitle {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    margin: 0
+}
+
 .loginPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: fit-content;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     padding: 10px 75px;
     border-radius: 5%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1),
     0px 8px 16px rgba(0, 0, 0, 0.1), 0px 16px 32px rgba(0, 0, 0, 0.1);
 }
+
 .login {
     color: white;
+    font-family: 'Pacifico', cursive;
 }
 
 form {
     display: flex;
     flex-direction: column;
 }
+
 form > * {
     margin: 5px;
     padding: 5px;
 }
+
 input {
     border-radius: 24px;
 }
@@ -30,39 +63,44 @@ label {
     color: white;
     display: flex;
     justify-content: center;
+    font-family: 'Pacifico', cursive;
+    cursor: pointer;
+    margin: 5px auto;
 }
 
 .loginbtn {
-    background-color:#51c26f;
-    border-radius:28px;
-    border:1px solid #18ab29;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:17px;
-    padding:16px 31px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
+    background-color: #51c26f;
+    border-radius: 28px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 5px 31px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+    font-family: 'Pacifico', cursive;
 }
+
 .loginbtn:hover {
-    background-color:#5cbf2a;
+    background-color: #5cbf2a;
 }
 
 .signbtn {
     background-color: #e02341;
-    border:1px solid red;
-    border-radius:28px;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:17px;
-    padding:16px 31px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
+    border: 1px solid red;
+    border-radius: 28px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Pacifico', cursive;
+    font-size: 17px;
+    padding: 5px 31px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
 
 }
+
 .signbtn:hover {
     background-color: red;
 }

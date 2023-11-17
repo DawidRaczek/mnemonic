@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+import "./Styles/normalize.css"
 import "./Styles/App.css"
 import "./Styles/LoginPage.css"
 import Cards from "./Components/Cards.jsx"

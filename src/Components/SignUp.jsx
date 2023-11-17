@@ -24,20 +24,27 @@ export default function SignUp({email, setEmail, password, setPassword, setIsLog
 
 
     return (
+        <div className='mainLoginPage'>
+            <div className='title'>
+                <h1 className='mnemonicTitle'>Mnemonic</h1>
+                <h2 className='cardsTitle'>Cards</h2>
+            </div>
             <div className='loginPage'>
                 <h1 className='login'>SignUp</h1>
                 <form>
-                    <label className='label'>
+                    <label htmlFor='email' className='label'>
                         Email
                     </label>
-                    <input type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
-                    <label className='label'>
+                    <input id='email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <label htmlFor='password' className='label'>
                         Password
                     </label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input id='password' type="password" value={password}
+                           onChange={(e) => setPassword(e.target.value)}/>
                     <button className='loginbtn' onClick={onClick}>SignUp</button>
                     <button className='signbtn' onClick={changeForm}>SignUp/Login</button>
                 </form>
             </div>
+        </div>
     )
 }

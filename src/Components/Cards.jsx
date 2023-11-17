@@ -48,7 +48,7 @@ export default function Cards() {
     }
 
     return (
-        <div>
+        <div className='container'>
             {/* number of cards */}
             {flashCardData && flashCardData.length > 0 ? (
                 <div className="cardNumber">

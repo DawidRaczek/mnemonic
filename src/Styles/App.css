@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
     --fontFamily: "Commissioner", sans-serif;
@@ -9,14 +10,17 @@
 }
 
 body {
-    margin: 20px auto;
     background: #242934;
     font-family: var(--fontFamily);
 }
 
+.cardNumber {
+    font-family: 'Pacifico', cursive;
+}
+
 .nav {
     width: var(--layout-width);
-    margin: auto;
+    /*margin: auto;*/
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -26,12 +30,13 @@ body {
     background: #111122;
     color: white;
     font-size: 0.9em;
-    padding: 0.8em 1.2em;
+    padding: 0.5em 1.2em;
     border-radius: var(--border-radius);
     margin: 1em 5px;
     opacity: 0.85;
     transition: all 0.25s;
     cursor: pointer;
+    font-family: 'Pacifico', cursive;
 }
 
 .nav button:hover {
