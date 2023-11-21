@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Login from "./Login.jsx";
 import SignUp from "./SignUp.jsx";
-import '../Styles/LoginPage.css'
+import '../Styles/LoginPage.scss'
 
 export default function LoginPage({ setIsLogged }) {
 

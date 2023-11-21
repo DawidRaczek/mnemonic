@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/LoginPage.css'
+import '../Styles/LoginPage.scss'
 import {auth} from "../firebase.js"
 import {signInWithEmailAndPassword} from 'firebase/auth'
 

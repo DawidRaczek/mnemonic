@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
-import "./Styles/normalize.css"
-import "./Styles/App.css"
-import "./Styles/LoginPage.css"
+import "./Styles/normalize.scss"
+import "./Styles/App.scss"
+import "./Styles/LoginPage.scss"
 import Cards from "./Components/Cards.jsx"
 import LoginPage from "./Components/LoginPage.jsx";
 
