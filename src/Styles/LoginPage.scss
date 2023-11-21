@@ -64,10 +64,6 @@ body {
     }
   }
 
-  input {
-    border-radius: 24px;
-  }
-
   label {
     color: white;
     display: flex;
@@ -75,6 +71,7 @@ body {
     font-family: 'Pacifico', cursive;
     cursor: pointer;
     margin: 5px auto;
+    text-decoration-color: white;
   }
 
   .loginbtn,
@@ -88,23 +85,19 @@ body {
     font-family: 'Pacifico', cursive;
     border-radius: 28px;
     padding: 5px 31px;
+    text-transform: lowercase;
 
-    &:hover {
-      background-color: #5cbf2a;
+    &:first-letter {
+      text-transform: uppercase;
     }
+
   }
 
   .loginbtn {
-    background-color: #51c26f;
     border: 1px solid #18ab29;
   }
 
   .signbtn {
-    background-color: #e02341;
     border: 1px solid red;
-
-    &:hover {
-      background-color: red;
-    }
   }
 }

@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-
+import React, {useState, useEffect} from "react";
 import "./Styles/normalize.scss"
 import "./Styles/App.scss"
 import "./Styles/LoginPage.scss"
@@ -9,10 +8,9 @@ import LoginPage from "./Components/LoginPage.jsx";
 export default function App() {
 
     const [isLogged, setIsLogged] = useState(false)
-
   return (
       <>
-          {isLogged ? <Cards /> : <LoginPage setIsLogged={setIsLogged}/>}
+          {isLogged ? <Cards setIsLogged={setIsLogged} /> : <LoginPage setIsLogged={setIsLogged}/>}
       </>
   );
 }

@@ -1,4 +1,7 @@
 import React from "react";
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../firebase.js";
 
@@ -32,17 +35,38 @@ export default function SignUp({email, setEmail, password, setPassword, setIsLog
             <div className='loginPage'>
                 <h1 className='login'>SignUp</h1>
                 <form>
-                    <label htmlFor='email' className='label'>
-                        Email
-                    </label>
-                    <input id='email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
-                    <label htmlFor='password' className='label'>
-                        Password
-                    </label>
-                    <input id='password' type="password" value={password}
-                           onChange={(e) => setPassword(e.target.value)}/>
-                    <button className='loginbtn' onClick={onClick}>SignUp</button>
-                    <button className='signbtn' onClick={changeForm}>SignUp/Login</button>
+                    <TextField
+                        id='outlined-basic'
+                        label='Email'
+                        InputProps={{
+                            style: { color: 'white' },
+                        }}
+                        type='text'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <TextField
+                        id='outlined-password-input'
+                        label='Password'
+                        InputProps={{
+                            style: { color: 'white' },
+                        }}
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <Button
+                        variant='contained'
+                        color='success'
+                        className='loginbtn'
+                        onClick={onClick}>SignUp
+                    </Button>
+                    <Button
+                        variant='outlined'
+                        color='error'
+                        className='signbtn'
+                        onClick={changeForm}>SignUp/Login
+                    </Button>
                 </form>
             </div>
         </div>

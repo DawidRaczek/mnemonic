@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import Button from '@mui/material/Button';
 import "../Styles/Cardstyles.scss";
 import data from '../data/data.json';
 
 import Card from "./Card";
 
-export default function Cards() {
+export default function Cards({setIsLogged}) {
     const [flashCardData, setFlashCardData] = useState([]);
     const [current, setCurrent] = useState(0);
 
@@ -46,9 +47,21 @@ export default function Cards() {
     function nextCard() {
         setCurrent(current + 1);
     }
+    function logOut() {
+        localStorage.setItem('isLogged', 'false')
+        setIsLogged(false)
+    }
 
     return (
         <div className='container'>
+            <Button
+                variant='outlined'
+                color='error'
+                className='logoutbtn'
+                onClick={logOut}
+            >
+                LogOut
+            </Button>
             {/* number of cards */}
             {flashCardData && flashCardData.length > 0 ? (
                 <div className="cardNumber">

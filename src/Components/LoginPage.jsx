@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Login from "./Login.jsx";
 import SignUp from "./SignUp.jsx";
 import '../Styles/LoginPage.scss'
+
 
 export default function LoginPage({ setIsLogged }) {
 
@@ -9,10 +10,15 @@ export default function LoginPage({ setIsLogged }) {
     const [password, setPassword] = useState("")
     const [isLogin, setIsLogin] = useState(true)
 
+    useEffect(() => {
+        const isLoggedFromLocalStorage = localStorage.getItem('isLogged') === 'true'
+        setIsLogged(isLoggedFromLocalStorage)
+    }, []);
     const onClick = (e) => {
         e.preventDefault()
         if (email !== '' && password !== '') {
-            setIsLogged(true)
+            setIsLogged(true);
+            localStorage.setItem('isLogged', true);
         }
     }
 
