@@ -13,9 +13,8 @@ ChartJS.register(ArcElement, Legend);
 export default function Cards({ setIsLogged }) {
     const [flashCardData, setFlashCardData] = useState([]);
     const [current, setCurrent] = useState(0);
-    const [correctCount, setCorrectCount] = useState(0);
-    const [incorrectCount, setIncorrectCount] = useState(0);
     const [showResult, setShowResult] = useState(false);
+    const [counter, setCounter] = useState([])
 
     const checkDuplication = (arr) => {
         const randomizerFunction = Math.floor(Math.random() * data.length);
@@ -43,6 +42,7 @@ export default function Cards({ setIsLogged }) {
     function previousCard() {
         if (current > 0) {
             setCurrent(current - 1);
+            setCounter((prevState) => prevState.slice(0, -1))
             setShowResult(false);
         }
     }
@@ -58,13 +58,13 @@ export default function Cards({ setIsLogged }) {
 
     // handle thumbs up (👍) button click
     function handleThumbUpClick() {
-        setCorrectCount(correctCount + 1);
+        setCounter((prevState) => [...prevState, {type: 'correct'}])
         nextCard();
     }
 
     // handle thumbs down (👎) button click
     function handleThumbDownClick() {
-        setIncorrectCount(incorrectCount + 1);
+        setCounter((prevState) => [...prevState, {type: 'inCorrect'}])
         nextCard();
     }
 
@@ -81,8 +81,7 @@ export default function Cards({ setIsLogged }) {
         }
         setFlashCardData(cardsToDisplay);
         setCurrent(0);
-        setCorrectCount(0);
-        setIncorrectCount(0);
+        setCounter([]);
         setShowResult(false);
     }
 
@@ -91,9 +90,9 @@ export default function Cards({ setIsLogged }) {
         setIsLogged(false);
     }
 
-    const correctPercentage = (correctCount / flashCardData.length) * 100;
-    const incorrectPercentage = (incorrectCount / flashCardData.length) * 100;
-    const skippedPercentage = ( flashCardData.length - (correctCount + incorrectCount)) / flashCardData.length * 100;
+    const correctPercentage = (counter.filter((e) => e.type === 'correct').length / flashCardData.length) * 100;
+    const incorrectPercentage = (counter.filter((e) => e.type === 'inCorrect').length/ flashCardData.length) * 100;
+    const skippedPercentage = ( flashCardData.length - (counter.filter((e) => e.type === 'correct').length + counter.filter((e) => e.type === 'inCorrect').length)) / flashCardData.length * 100;
 
     return (
         <div className="container">
@@ -151,7 +150,7 @@ export default function Cards({ setIsLogged }) {
                         data={{
                         labels: [`${correctPercentage.toFixed(2)}% Correct`, `${incorrectPercentage.toFixed(2)}% Incorrect`, `${skippedPercentage.toFixed(2)}% Skipped`],
                         datasets: [{
-                            data: [correctCount, incorrectCount, flashCardData.length - (correctCount + incorrectCount)],
+                            data: [counter.filter(({type}) => type === 'correct').length, counter.filter(({type}) => type === 'inCorrect').length, flashCardData.length - (counter.filter(({type}) => type === 'correct').length + counter.filter(({type}) => type === 'inCorrect').length)],
                             backgroundColor: ['green', 'red', 'grey'],
                         }],
                     }}
