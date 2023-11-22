@@ -43,7 +43,6 @@ body {
   justify-content: center;
   align-items: center;
   width: fit-content;
-  // margin: 0 auto;
   padding: 10px 75px;
   border-radius: 5%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1),
@@ -70,8 +69,8 @@ body {
     justify-content: center;
     font-family: 'Pacifico', cursive;
     cursor: pointer;
-    margin: 5px auto;
     text-decoration-color: white;
+    overflow: visible;
   }
 
   .loginbtn,
@@ -101,3 +100,4 @@ body {
     border: 1px solid red;
   }
 }
+

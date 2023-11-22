@@ -67,7 +67,7 @@ export default function Login({email, setEmail, password, setPassword, setIsLogi
             <div className="loginPage">
                 <h1 className='login'>Login</h1>
                 <form>
-                    <FormControl fullWidth>
+                    <FormControl>
                         <TextField
                             id='outlined-basic'
                             label='Email'
@@ -82,7 +82,7 @@ export default function Login({email, setEmail, password, setPassword, setIsLogi
                         <FormHelperText error>{emailError}</FormHelperText>
                     </FormControl>
 
-                    <FormControl fullWidth>
+                    <FormControl>
                         <TextField
                             id='outlined-password-input'
                             label='Password'

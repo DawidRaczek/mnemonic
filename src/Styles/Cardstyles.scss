@@ -86,8 +86,11 @@ html {
   text-align: center;
   margin: 20px auto;
 }
-.logoutbtn {
-  position: absolute !important;
-  top: 10px;
-  right: 10px;
+
+.checkbtns {
+  display: flex;
+}
+
+.percentbtn {
+  margin-inline: 10px !important;
 }
