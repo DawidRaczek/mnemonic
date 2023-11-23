@@ -1,6 +1,9 @@
 # Mnemonic Cards
 
-Welcome to Mnemonic Cards, your go-to application for learning English vocabulary through flashcards! This application is designed to make the process of acquiring new words engaging and efficient by incorporating mnemonic techniques into your learning experience.
+Welcome to Mnemonic Cards, your go-to application for learning English vocabulary through flashcards! This application is designed to make the process of acquiring new words engaging and efficient by incorporating mnemonic techniques into your learning experience. [Click here](https://mnemonic-cards.web.app/)
+
+[![Alt text](./src/assets/mnemonic.jpg)](https://mnemonic-cards.web.app/)
+
 
 ## Features
 

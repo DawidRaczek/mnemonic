@@ -16,27 +16,15 @@ export default function Cards({ setIsLogged }) {
     const [showResult, setShowResult] = useState(false);
     const [counter, setCounter] = useState([])
 
-    const checkDuplication = (arr) => {
-        const randomizerFunction = Math.floor(Math.random() * data.length);
-        return randomizerFunction;
-    };
-
     useEffect(() => {
         const cardsToDisplay = [];
         for (let i = 0; i < 10; i++) {
-            const randomizer = checkDuplication(cardsToDisplay);
-            const cardNumber = {
-                index: randomizer,
-                ...data[randomizer],
-            };
-            cardsToDisplay.push(cardNumber);
+            const randomizer = Math.floor(Math.random() * data.length)
+            const card = data[randomizer];
+            cardsToDisplay.push(card);
         }
-        setFlashCardData(cardsToDisplay);
+        setFlashCardData(cardsToDisplay);  // Aktualizujemy stan flashCardData ustawiając go na tablicę kart do wyświetlenia
     }, []);
-
-    useEffect(() => {
-        console.log(flashCardData);
-    }, [flashCardData]);
 
     // navigation in cards
     function previousCard() {
@@ -72,12 +60,9 @@ export default function Cards({ setIsLogged }) {
     function handleRestartClick() {
         const cardsToDisplay = [];
         for (let i = 0; i < 10; i++) {
-            const randomizer = checkDuplication(cardsToDisplay);
-            const cardNumber = {
-                index: randomizer,
-                ...data[randomizer],
-            };
-            cardsToDisplay.push(cardNumber);
+            const randomizer = Math.floor(Math.random() * data.length);
+            const card = data[randomizer];
+            cardsToDisplay.push(card);
         }
         setFlashCardData(cardsToDisplay);
         setCurrent(0);
@@ -116,9 +101,9 @@ export default function Cards({ setIsLogged }) {
             {/* /number of cards */}
 
             {/* render cards */}
-            {flashCardData && flashCardData.length > 0 && current < flashCardData.length && !showResult ? (
-                <Card card={flashCardData[current]} key={flashCardData[current].id} />
-            ) : null}
+            {flashCardData && flashCardData.length > 0 && current < flashCardData.length && !showResult && (
+                <Card card={flashCardData[current]} />
+            )}
             {/* /render cards */}
 
             {/* render thumbs up (👍) and thumbs down (👎) buttons */}

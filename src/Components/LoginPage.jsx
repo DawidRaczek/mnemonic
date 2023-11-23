@@ -14,13 +14,6 @@ export default function LoginPage({ setIsLogged }) {
         const isLoggedFromLocalStorage = localStorage.getItem('isLogged') === 'true'
         setIsLogged(isLoggedFromLocalStorage)
     }, []);
-    const onClick = (e) => {
-        e.preventDefault()
-        if (email !== '' && password !== '') {
-            setIsLogged(true);
-            localStorage.setItem('isLogged', true);
-        }
-    }
 
     return (
         <>
