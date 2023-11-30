@@ -4,6 +4,8 @@ Welcome to Mnemonic Cards, your go-to application for learning English vocabular
 
 [![Alt text](./src/assets/mnemonic.jpg)](https://mnemonic-cards.web.app/)
 
+[![Alt text](./src/assets/mainapp.jpg)](https://mnemonic-cards.web.app/)
+
 
 ## Features
 
